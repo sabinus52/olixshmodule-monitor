@@ -5,7 +5,7 @@
 _olixsh_module()
 {
     local CURRENT MODULE ACTION PREVIOUS PARAM1 PARAM2 PARAM3 PARAM4 PARAM5
-    local LST_ACTIONS="help"
+    local LST_ACTIONS="mountpoints help"
     COMPREPLY=()
     CURRENT="${COMP_WORDS[COMP_CWORD]}"
     PREVIOUS="${COMP_WORDS[COMP_CWORD-1]}"
@@ -28,4 +28,22 @@ _olixsh_module()
         fi
     done
 
+    case "${ACTION}" in
+        mountpoints)
+            _olixsh_module_mountpoints
+            return 0
+            ;;
+    esac
+}
+
+
+###
+# Liste des options pour MOUNTPOINTS
+##
+_olixsh_module_mountpoints()
+{
+    local CUR
+    CUR="${COMP_WORDS[COMP_CWORD]}"
+
+    COMPREPLY=( $(compgen -W "--all --writetest --checkfile=" -- ${CUR}) )
 }
