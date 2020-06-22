@@ -5,7 +5,7 @@
 _olixsh_module()
 {
     local CURRENT MODULE ACTION PREVIOUS PARAM1 PARAM2 PARAM3 PARAM4 PARAM5
-    local LST_ACTIONS="mountpoints help"
+    local LST_ACTIONS="mountpoints zmountpoint help"
     COMPREPLY=()
     CURRENT="${COMP_WORDS[COMP_CWORD]}"
     PREVIOUS="${COMP_WORDS[COMP_CWORD-1]}"
@@ -33,6 +33,10 @@ _olixsh_module()
             _olixsh_module_mountpoints
             return 0
             ;;
+        zmountpoint)
+            _olixsh_module_zmountpoint
+            return 0
+            ;;
     esac
 }
 
@@ -47,3 +51,16 @@ _olixsh_module_mountpoints()
 
     COMPREPLY=( $(compgen -W "--all --writetest --checkfile=" -- ${CUR}) )
 }
+
+
+###
+# Liste des options pour ZMOUNTPOINT
+##
+_olixsh_module_zmountpoint()
+{
+    local CUR
+    CUR="${COMP_WORDS[COMP_CWORD]}"
+
+    COMPREPLY=( $(compgen -W "--discovery --writetest --checkfile=" -- ${CUR}) )
+}
+
