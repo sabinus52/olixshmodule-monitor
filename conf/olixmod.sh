@@ -21,7 +21,7 @@ OLIX_MODULE_MONITOR_STATE_UNKNOW=3
 ###
 # Chargement des librairies requis
 ##
-olixmodule_alfresco_require_libraries()
+olixmodule_monitor_require_libraries()
 {
     load "modules/monitor/lib/*"
 }
@@ -30,7 +30,7 @@ olixmodule_alfresco_require_libraries()
 ###
 # Retourne la liste des modules requis
 ##
-olixmodule_alfresco_require_module()
+olixmodule_monitor_require_module()
 {
     echo -e ""
 }
@@ -39,7 +39,7 @@ olixmodule_alfresco_require_module()
 ###
 # Retourne la liste des binaires requis
 ##
-olixmodule_alfresco_require_binary()
+olixmodule_monitor_require_binary()
 {
     echo -e ""
 }
@@ -48,7 +48,7 @@ olixmodule_alfresco_require_binary()
 ###
 # Traitement à effectuer au début d'un traitement
 ##
-# olixmodule_alfresco_include_begin()
+# olixmodule_monitor_include_begin()
 # {
 # }
 
@@ -56,7 +56,7 @@ olixmodule_alfresco_require_binary()
 ###
 # Traitement à effectuer au début d'un traitement
 ##
-# olixmodule_alfresco_include_end()
+# olixmodule_monitor_include_end()
 # {
 #    echo "FIN"
 # }
@@ -65,6 +65,6 @@ olixmodule_alfresco_require_binary()
 ###
 # Sortie de liste pour la completion
 ##
-# olixmodule_alfresco_list()
+# olixmodule_monitor_list()
 # {
 # }
